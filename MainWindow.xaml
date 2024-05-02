@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Window
+    x:Class="proshandadmin.MainWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:proshandadmin"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Window.SystemBackdrop>
+        <DesktopAcrylicBackdrop />
+    </Window.SystemBackdrop>
+
+    <NavigationView PaneDisplayMode="LeftCompact" Loaded="NavView_Loaded" IsBackButtonVisible="Collapsed" SelectionChanged="handleSelectionChange" x:Name="NavView">
+        <NavigationView.MenuItems >
+            <NavigationViewItem Icon="Home" Content="Home" Tag="HomePage" x:Name="navMainPage"/>
+            <NavigationViewItem Icon="Shop" Content="Orders" Tag="OrdersPage" x:Name="navOrdersPage"/>
+        </NavigationView.MenuItems>
+        <Frame x:Name="contentFrame"/>
+    </NavigationView>
+</Window>
