@@ -15,9 +15,12 @@
 
         <StackPanel>
             <TextBlock x:Name="pageTitle" Text="Manage Orders" Margin="16" Style="{StaticResource TitleTextBlockStyle}"/>
-            <controls:DataGrid x:Name="dataGrid" AutoGenerateColumns="True" ItemsSource="{x:Bind local:Order.Orders()}">
-
-            </controls:DataGrid>
+            <ScrollView  Height="500" Width="1000" HorizontalAlignment="Left" VerticalAlignment="Top"  HorizontalScrollBarVisibility="Auto"
+ HorizontalScrollMode="Enabled" VerticalScrollMode="Enabled" VerticalScrollBarVisibility="Auto"   ZoomMode="Enabled" IsTabStop="True"
+>
+                <controls:DataGrid x:Name="dataGrid" AutoGenerateColumns="True" AlternatingRowBackground="{ThemeResource ControlFillColorTertiaryBrush}" FrozenColumnCount="1" IsReadOnly="True" ClipboardCopyMode="IncludeHeader" ItemsSource="{x:Bind local:Order.Orders()}">
+                </controls:DataGrid>
+            </ScrollView>
         </StackPanel>
     </Grid>
 </Page>
