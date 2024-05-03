@@ -10,7 +10,23 @@
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
     <Grid>
-        <TextBlock x:Name="pageTitle" Text="Manage Orders"
-       Margin="16" Style="{StaticResource TitleTextBlockStyle}"/>
+        <StackPanel>
+            <TextBlock x:Name="pageTitle" Text="Manage Orders" Margin="16" Style="{StaticResource TitleTextBlockStyle}"/>
+
+            <Grid Margin="16"  >
+                <StackPanel Orientation="Horizontal" Spacing="60" HorizontalAlignment="Left" Padding="16" CornerRadius="8" Background="{ThemeResource CardBackgroundFillColorSecondaryBrush}">
+
+                <TextBlock Text="Order Id" Style="{StaticResource BodyStrongTextBlockStyle}"/>
+                <TextBlock Text="First Name" Style="{StaticResource BodyStrongTextBlockStyle}"/>
+                <TextBlock Text="Last Name" Style="{StaticResource BodyStrongTextBlockStyle}"/>
+                <TextBlock Text="Email" Style="{StaticResource BodyStrongTextBlockStyle}"/>
+                <TextBlock Text="Mobile" Style="{StaticResource BodyStrongTextBlockStyle}"/>
+                <TextBlock Text="Address" Style="{StaticResource BodyStrongTextBlockStyle}"/>
+                <TextBlock Text="Hand Size" Style="{StaticResource BodyStrongTextBlockStyle}"/>
+                <TextBlock Text="Hand Color" Style="{StaticResource BodyStrongTextBlockStyle}"/>
+                <TextBlock Text="Status" Style="{StaticResource BodyStrongTextBlockStyle}"/>
+                </StackPanel>
+            </Grid>
+        </StackPanel>
     </Grid>
 </Page>
