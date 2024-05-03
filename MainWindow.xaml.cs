@@ -25,6 +25,7 @@ namespace proshandadmin
         {
             this.Title = "Prosthetic Hand Store Admin";
             this.ExtendsContentIntoTitleBar = true;
+
             this.InitializeComponent();
         }
 
