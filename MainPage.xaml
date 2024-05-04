@@ -43,11 +43,11 @@
             </StackPanel>
         </StackPanel>
         <StackPanel Margin="16, 16, 0, 0" Orientation="Horizontal" Spacing="8">
-            <StackPanel Orientation="Vertical" VerticalAlignment="Stretch" Height="Auto" Padding="24" Spacing="16" CornerRadius="8" Background="{ThemeResource CardBackgroundFillColorDefaultBrush}">
-                <HyperlinkButton NavigateUri="https://proshandstore.vercel.app" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <StackPanel Orientation="Vertical" Height="Auto" Padding="24" Spacing="16" CornerRadius="8" Background="{ThemeResource CardBackgroundFillColorDefaultBrush}">
+                <TextBlock FontSize="20" HorizontalAlignment="Center" Style="{ThemeResource SubtitleTextBlockStyle}">Visit store website</TextBlock>
+                <HyperlinkButton NavigateUri="https://proshandstore.vercel.app" HorizontalAlignment="Center">
                     <FontIcon Glyph="&#xF71C;" FontSize="60"/>
                 </HyperlinkButton>
-                <TextBlock FontSize="20" HorizontalAlignment="Center" VerticalAlignment="Center">Visit store website</TextBlock>
             </StackPanel>
             <StackPanel Orientation="Vertical" Padding="24" Spacing="16" CornerRadius="8" Background="{ThemeResource CardBackgroundFillColorDefaultBrush}">
                 <TextBlock Style="{ThemeResource TitleTextBlockStyle}">Project Participants</TextBlock>
