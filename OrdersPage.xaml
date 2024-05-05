@@ -54,7 +54,13 @@
 					<TextBlock
 						VerticalAlignment="Center"
 						Padding="0, 0, 16, 0"
-						><Underline>60 New Orders Available</Underline></TextBlock>
+                        >
+                        <Underline
+                            >
+                            <Run
+                                x:Name="NewOrdersCount"></Run>
+                            <Run> New Orders Available</Run>
+                        </Underline></TextBlock>
 					<Button Style="{ThemeResource AccentButtonStyle}">
 						<StackPanel Orientation="Horizontal" Spacing="8">
 							<FontIcon Glyph="&#xE9F5;" />

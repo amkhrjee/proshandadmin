@@ -21,10 +21,12 @@ namespace proshandadmin
 	{
 		public List<Order> orders;
 		public bool isBusy;
+		public int newOrdersCount;
         readonly DataGrid dataGrid;
 		public OrdersPage()
 		{
 			orders = new();
+			
 			isBusy = false;
             dataGrid = new()
 			{
@@ -42,7 +44,19 @@ namespace proshandadmin
 			{
 				orders = Order.Orders();
 			}
-			dataGrid.ItemsSource = orders;
+
+            newOrdersCount = 0;
+            foreach (var order in orders)
+            {
+                if (!order.IsDone)
+                {
+                    newOrdersCount++;
+                }
+            }
+
+            NewOrdersCount.Text = newOrdersCount.ToString();
+
+            dataGrid.ItemsSource = orders;
 
 			scrollView.Content = dataGrid;
 		}
@@ -65,6 +79,17 @@ namespace proshandadmin
 			dataGrid.ItemsSource = null;
 			orders = Order.Orders();
 			dataGrid.ItemsSource = orders;
-		}
+			newOrdersCount = 0;
+            foreach (var order in orders)
+            {
+                if (!order.IsDone)
+                {
+                    newOrdersCount++;
+                }
+            }
+
+            NewOrdersCount.Text = null;
+            NewOrdersCount.Text = newOrdersCount.ToString();
+        }
 	}
 }
