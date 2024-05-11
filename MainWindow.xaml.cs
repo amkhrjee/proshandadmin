@@ -43,7 +43,10 @@ namespace proshandadmin
             {
                 contentFrame.SourcePageType = typeof(OrdersPage);
             }
-
+            else if (args.IsSettingsSelected)
+            {
+                contentFrame.SourcePageType = typeof(SettingsPage);
+            }
         }
 
         private void NavView_Loaded(object sender, RoutedEventArgs e)

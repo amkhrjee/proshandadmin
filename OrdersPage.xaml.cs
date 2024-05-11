@@ -48,6 +48,7 @@ namespace proshandadmin
             TextBlock textBlock = new TextBlock
             {
                 Text = "Fetching data",
+                Style = (Style)Resources["SubtitleTextBlockStyle"],
             };
             StackPanel stackPanel = new StackPanel
             {
@@ -68,7 +69,6 @@ namespace proshandadmin
             while (orders.Count == 0)
             {
                 //Show loading state
-
             }
 
             newOrdersCount = 0;

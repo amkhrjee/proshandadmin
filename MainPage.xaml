@@ -8,81 +8,183 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d"
     Background="{ThemeResource LayerOnMicaBaseAltFillColorDefault}">
-
     <StackPanel>
-        <TextBlock x:Name="pageTitle" Text="Home"
-               Margin="16" Style="{StaticResource TitleTextBlockStyle}"/>
-        <StackPanel Margin="16, 0, 0, 0" Orientation="Horizontal" Spacing="8">
-            <StackPanel Orientation="Vertical"  Padding="24" CornerRadius="8" Background="{ThemeResource CardBackgroundFillColorDefaultBrush}">
-                <TextBlock  Style="{ThemeResource DisplayTextBlockStyle}">12</TextBlock>
-                <StackPanel Orientation="Horizontal">
-                    <FontIcon Glyph="&#xE7BF;" />
-                <TextBlock FontSize="20" Margin="8, 0, 0, 0">New Orders</TextBlock>
+        <TextBlock
+            x:Name="pageTitle"
+            Text="Home"
+            Margin="16"
+            Style="{StaticResource TitleTextBlockStyle}" />
+        <StackPanel
+            Margin="16, 0, 0, 0"
+            Orientation="Horizontal"
+            Spacing="8">
+            <StackPanel
+                Orientation="Vertical"
+                Padding="24"
+                CornerRadius="8"
+                Background="{ThemeResource CardBackgroundFillColorDefaultBrush}">
+                <TextBlock
+                    Style="{ThemeResource DisplayTextBlockStyle}">12</TextBlock>
+                <StackPanel
+                    Orientation="Horizontal">
+                    <FontIcon
+                        Glyph="&#xE7BF;" />
+                    <TextBlock
+                        FontSize="20"
+                        Margin="8, 0, 0, 0">New Orders</TextBlock>
                 </StackPanel>
             </StackPanel>
-            <StackPanel Orientation="Vertical"  Padding="24" CornerRadius="8" Background="{ThemeResource CardBackgroundFillColorDefaultBrush}">
-                <TextBlock  Style="{ThemeResource DisplayTextBlockStyle}">24</TextBlock>
-                <StackPanel Orientation="Horizontal">
-                    <FontIcon Glyph="&#xE716;" />
-                    <TextBlock FontSize="20" Margin="8, 0, 0, 0">Total Customers</TextBlock>
+            <StackPanel
+                Orientation="Vertical"
+                Padding="24"
+                CornerRadius="8"
+                Background="{ThemeResource CardBackgroundFillColorDefaultBrush}">
+                <TextBlock
+                    Style="{ThemeResource DisplayTextBlockStyle}">24</TextBlock>
+                <StackPanel
+                    Orientation="Horizontal">
+                    <FontIcon
+                        Glyph="&#xE716;" />
+                    <TextBlock
+                        FontSize="20"
+                        Margin="8, 0, 0, 0">Total Customers</TextBlock>
                 </StackPanel>
             </StackPanel>
-            <StackPanel Orientation="Vertical"  Padding="24" CornerRadius="8" Background="{ThemeResource CardBackgroundFillColorDefaultBrush}">
-                <TextBlock  Style="{ThemeResource DisplayTextBlockStyle}">₹25.6K</TextBlock>
-                <StackPanel Orientation="Horizontal">
-                    <FontIcon Glyph="&#xE8C7;" />
-                    <TextBlock FontSize="20" Margin="8, 0, 0, 0">Today's Revenue</TextBlock>
+            <StackPanel
+                Orientation="Vertical"
+                Padding="24"
+                CornerRadius="8"
+                Background="{ThemeResource CardBackgroundFillColorDefaultBrush}">
+                <TextBlock
+                    Style="{ThemeResource DisplayTextBlockStyle}">₹25.6K</TextBlock>
+                <StackPanel
+                    Orientation="Horizontal">
+                    <FontIcon
+                        Glyph="&#xE8C7;" />
+                    <TextBlock
+                        FontSize="20"
+                        Margin="8, 0, 0, 0">Today's Revenue</TextBlock>
                 </StackPanel>
             </StackPanel>
-            <StackPanel Orientation="Vertical"  Padding="24" CornerRadius="8" Background="{ThemeResource CardBackgroundFillColorDefaultBrush}">
-                <TextBlock  Style="{ThemeResource DisplayTextBlockStyle}">16</TextBlock>
-                <StackPanel Orientation="Horizontal">
-                    <FontIcon Glyph="&#xE914;" />
-                    <TextBlock FontSize="20" Margin="8, 0, 0, 0">Models Printed Today</TextBlock>
+            <StackPanel
+                Orientation="Vertical"
+                Padding="24"
+                CornerRadius="8"
+                Background="{ThemeResource CardBackgroundFillColorDefaultBrush}">
+                <TextBlock
+                    Style="{ThemeResource DisplayTextBlockStyle}">16</TextBlock>
+                <StackPanel
+                    Orientation="Horizontal">
+                    <FontIcon
+                        Glyph="&#xE914;" />
+                    <TextBlock
+                        FontSize="20"
+                        Margin="8, 0, 0, 0">Models Printed Today</TextBlock>
                 </StackPanel>
             </StackPanel>
         </StackPanel>
-        <StackPanel Margin="16, 16, 0, 0" Orientation="Horizontal" Spacing="8">
-            <StackPanel Orientation="Vertical" Height="Auto" Padding="24" Spacing="16" CornerRadius="8" Background="{ThemeResource CardBackgroundFillColorDefaultBrush}">
-                <TextBlock FontSize="20" HorizontalAlignment="Center" Style="{ThemeResource SubtitleTextBlockStyle}">Visit store website</TextBlock>
-                <HyperlinkButton NavigateUri="https://proshandstore.vercel.app" HorizontalAlignment="Center">
-                    <FontIcon Glyph="&#xF71C;" FontSize="60"/>
+        <StackPanel
+            Margin="16, 16, 0, 0"
+            Orientation="Horizontal"
+            Spacing="8">
+            <StackPanel
+                Orientation="Vertical"
+                Height="Auto"
+                Padding="24"
+                Spacing="16"
+                CornerRadius="8"
+                Background="{ThemeResource CardBackgroundFillColorDefaultBrush}">
+                <TextBlock
+                    FontSize="20"
+                    HorizontalAlignment="Center"
+                    Style="{ThemeResource SubtitleTextBlockStyle}">Visit store website</TextBlock>
+                <HyperlinkButton
+                    NavigateUri="https://proshandstore.vercel.app"
+                    HorizontalAlignment="Center">
+                    <FontIcon
+                        Glyph="&#xF71C;"
+                        FontSize="60" />
                 </HyperlinkButton>
             </StackPanel>
-            <StackPanel Orientation="Vertical" Padding="24" Spacing="16" CornerRadius="8" Background="{ThemeResource CardBackgroundFillColorDefaultBrush}">
-                <TextBlock Style="{ThemeResource TitleTextBlockStyle}">Project Participants</TextBlock>
-                <StackPanel Orientation="Horizontal" Spacing="52">
-                    <StackPanel Orientation="Vertical" Spacing="8" HorizontalAlignment="Stretch">
-                        <HyperlinkButton HorizontalAlignment="Center" NavigateUri="http://agnigarh.tezu.ernet.in/~nkakoty">
-                            <PersonPicture ProfilePicture="https://i.ibb.co/94YXBMG/index1.jpg" />
+            <StackPanel
+                Orientation="Vertical"
+                Padding="24"
+                Spacing="16"
+                CornerRadius="8"
+                Background="{ThemeResource CardBackgroundFillColorDefaultBrush}">
+                <TextBlock
+                    Style="{ThemeResource TitleTextBlockStyle}">Project Participants</TextBlock>
+                <StackPanel
+                    Orientation="Horizontal"
+                    Spacing="52">
+                    <StackPanel
+                        Orientation="Vertical"
+                        Spacing="8"
+                        HorizontalAlignment="Stretch">
+                        <HyperlinkButton
+                            HorizontalAlignment="Center"
+                            NavigateUri="http://agnigarh.tezu.ernet.in/~nkakoty">
+                            <PersonPicture
+                                ProfilePicture="https://i.ibb.co/94YXBMG/index1.jpg" />
                         </HyperlinkButton>
-                        <TextBlock HorizontalAlignment="Center" Style="{ThemeResource BodyStrongTextBlockStyle}">Dr. Nayan Moni Kakoty</TextBlock>
-                        <TextBlock HorizontalAlignment="Center" Style="{ThemeResource CaptionTextBlockStyle}">Project Guide</TextBlock>
+                        <TextBlock
+                            HorizontalAlignment="Center"
+                            Style="{ThemeResource BodyStrongTextBlockStyle}">Dr. Nayan M. Kakoty</TextBlock>
+                        <TextBlock
+                            HorizontalAlignment="Center"
+                            Style="{ThemeResource CaptionTextBlockStyle}">Project Guide</TextBlock>
                     </StackPanel>
-                    <StackPanel Orientation="Vertical" Spacing="8" HorizontalAlignment="Stretch">
-                        <HyperlinkButton HorizontalAlignment="Center" NavigateUri="https://www.linkedin.com/in/kumar-yogesh-2389872ba/"> 
-                            <PersonPicture ProfilePicture="https://i.ibb.co/KN48pXh/1713849714221.jpg" />
+                    <StackPanel
+                        Orientation="Vertical"
+                        Spacing="8"
+                        HorizontalAlignment="Stretch">
+                        <HyperlinkButton
+                            HorizontalAlignment="Center"
+                            NavigateUri="https://www.linkedin.com/in/kumar-yogesh-2389872ba/">
+                            <PersonPicture
+                                ProfilePicture="https://i.ibb.co/KN48pXh/1713849714221.jpg" />
                         </HyperlinkButton>
-                        <TextBlock HorizontalAlignment="Center" Style="{ThemeResource BodyStrongTextBlockStyle}">Kumar Yogesh</TextBlock>
-                        <TextBlock HorizontalAlignment="Center" Style="{ThemeResource CaptionTextBlockStyle}">Electronics &amp; Software</TextBlock>
+                        <TextBlock
+                            HorizontalAlignment="Center"
+                            Style="{ThemeResource BodyStrongTextBlockStyle}">Kumar Yogesh</TextBlock>
+                        <TextBlock
+                            HorizontalAlignment="Center"
+                            Style="{ThemeResource CaptionTextBlockStyle}">Electronics &amp; Software</TextBlock>
                     </StackPanel>
-                    <StackPanel Orientation="Vertical" Spacing="8">
-                        <HyperlinkButton HorizontalAlignment="Center" NavigateUri="https://www.linkedin.com/in/amkhrjee/">
-                            <PersonPicture ProfilePicture="https://i.ibb.co/0YDSQw5/potrait.jpg" />
+                    <StackPanel
+                        Orientation="Vertical"
+                        Spacing="8">
+                        <HyperlinkButton
+                            HorizontalAlignment="Center"
+                            NavigateUri="https://www.linkedin.com/in/amkhrjee/">
+                            <PersonPicture
+                                ProfilePicture="https://i.ibb.co/0YDSQw5/potrait.jpg" />
                         </HyperlinkButton>
-                        <TextBlock HorizontalAlignment="Center" Style="{ThemeResource BodyStrongTextBlockStyle}">Aniruddha Mukherjee</TextBlock>
-                        <TextBlock HorizontalAlignment="Center" Style="{ThemeResource CaptionTextBlockStyle}">Web &amp; Software</TextBlock>
+                        <TextBlock
+                            HorizontalAlignment="Center"
+                            Style="{ThemeResource BodyStrongTextBlockStyle}">Aniruddha Mukherjee</TextBlock>
+                        <TextBlock
+                            HorizontalAlignment="Center"
+                            Style="{ThemeResource CaptionTextBlockStyle}">Web &amp; Software</TextBlock>
                     </StackPanel>
-                    <StackPanel Orientation="Vertical" Spacing="8">
-                        <HyperlinkButton HorizontalAlignment="Center" NavigateUri="https://www.linkedin.com/in/ritish-kumar-das-17a629245/">
-                            <PersonPicture ProfilePicture="https://i.ibb.co/q91LsBQ/1657976189663.jpg" />
+                    <StackPanel
+                        Orientation="Vertical"
+                        Spacing="8">
+                        <HyperlinkButton
+                            HorizontalAlignment="Center"
+                            NavigateUri="https://www.linkedin.com/in/ritish-kumar-das-17a629245/">
+                            <PersonPicture
+                                ProfilePicture="https://i.ibb.co/q91LsBQ/1657976189663.jpg" />
                         </HyperlinkButton>
-                        <TextBlock HorizontalAlignment="Center" Style="{ThemeResource BodyStrongTextBlockStyle}">Ritish Kumar Das</TextBlock>
-                        <TextBlock HorizontalAlignment="Center" Style="{ThemeResource CaptionTextBlockStyle}">Electronics &amp; ML</TextBlock>
+                        <TextBlock
+                            HorizontalAlignment="Center"
+                            Style="{ThemeResource BodyStrongTextBlockStyle}">Ritish Kumar Das</TextBlock>
+                        <TextBlock
+                            HorizontalAlignment="Center"
+                            Style="{ThemeResource CaptionTextBlockStyle}">Electronics &amp; ML</TextBlock>
                     </StackPanel>
                 </StackPanel>
             </StackPanel>
         </StackPanel>
-
     </StackPanel>
 </Page>

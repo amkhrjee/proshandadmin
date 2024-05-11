@@ -7,9 +7,119 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d"
-    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-
-    <Grid>
-
-    </Grid>
+    Name="SetingsPage"
+    Background="{ThemeResource LayerOnMicaBaseAltFillColorDefault}">
+    <StackPanel>
+        <TextBlock
+            x:Name="pageTitle"
+            Text="Settings"
+            Margin="16"
+            Style="{StaticResource TitleTextBlockStyle}" />
+        <TextBlock
+            Text="Model Directories"
+            Margin="16"
+            Style="{StaticResource SubtitleTextBlockStyle}" />
+        <StackPanel
+            HorizontalAlignment="Left"
+            Orientation="Vertical"
+            Spacing="20"
+            Margin="16, 0, 0, 0">
+            <StackPanel
+                Spacing="10"
+                Orientation="Horizontal"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Center">
+                <TextBlock
+                    Text="30 cm"
+                    VerticalAlignment="Center"
+                    Style="{StaticResource BodyStrongTextBlockStyle}" />
+                <TextBox
+                    Width="400"
+                    AutomationProperties.Name="simple TextBox"
+                    PlaceholderText="Enter model directory" />
+                <Button
+                    ToolTipService.ToolTip="Browser folders"
+                    ToolTipService.Placement="Right">
+                    <FontIcon
+                        Glyph="&#xE838;" />
+                </Button>
+            </StackPanel>
+            <StackPanel
+                Spacing="10"
+                Orientation="Horizontal"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Center">
+                <TextBlock
+                    Text="35 cm"
+                    VerticalAlignment="Center"
+                    Style="{StaticResource BodyStrongTextBlockStyle}" />
+                <TextBox
+                    Width="400"
+                    AutomationProperties.Name="simple TextBox"
+                    PlaceholderText="Enter model directory" />
+                <Button
+                    ToolTipService.ToolTip="Browser folders"
+                    ToolTipService.Placement="Right">
+                    <FontIcon
+                        Glyph="&#xE838;" />
+                </Button>
+            </StackPanel>
+            <StackPanel
+                Spacing="10"
+                Orientation="Horizontal"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Center">
+                <TextBlock
+                    Text="40 cm"
+                    VerticalAlignment="Center"
+                    Style="{StaticResource BodyStrongTextBlockStyle}" />
+                <TextBox
+                    Width="400"
+                    AutomationProperties.Name="simple TextBox"
+                    PlaceholderText="Enter model directory" />
+                <Button
+                    ToolTipService.ToolTip="Browser folders"
+                    ToolTipService.Placement="Right">
+                    <FontIcon
+                        Glyph="&#xE838;" />
+                </Button>
+            </StackPanel>
+            <StackPanel
+                Spacing="10"
+                Orientation="Horizontal"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Center">
+                <TextBlock
+                    Text="45 cm"
+                    VerticalAlignment="Center"
+                    Style="{StaticResource BodyStrongTextBlockStyle}" />
+                <TextBox
+                    Width="400"
+                    AutomationProperties.Name="simple TextBox"
+                    PlaceholderText="Enter model directory" />
+                <Button
+                    ToolTipService.ToolTip="Browser folders"
+                    ToolTipService.Placement="Right">
+                    <FontIcon
+                        Glyph="&#xE838;" />
+                </Button>
+            </StackPanel>
+        </StackPanel>
+        <HyperlinkButton
+            HorizontalAlignment="Left"
+            RelativePanel.AlignLeftWithPanel="True"
+            Margin="4, 260"
+            NavigateUri="https://github.com/amkhrjee/proshandadmin"
+            >
+            <StackPanel
+                Orientation="Horizontal"
+                Spacing="8">
+                <FontIcon
+                Glyph="&#xE943;">
+                </FontIcon>
+            <TextBlock
+                x:Name="RefreshText">View Source</TextBlock>
+            </StackPanel>
+        </HyperlinkButton>
+    </StackPanel>
 </Page>
