@@ -17,33 +17,59 @@ using Microsoft.UI.Xaml.Media.Animation;
 
 namespace proshandadmin
 {
-	public sealed partial class OrdersPage : Page
-	{
-		public List<Order> orders;
-		public bool isBusy;
-		public int newOrdersCount;
+    public sealed partial class OrdersPage : Page
+    {
+        public List<Order> orders;
+        public bool isBusy;
+        public int newOrdersCount;
         readonly DataGrid dataGrid;
-		public OrdersPage()
-		{
-			orders = new();
-			
-			isBusy = false;
-            dataGrid = new()
-			{
-				AutoGenerateColumns = true,
-				AlternatingRowBackground = (Brush)Application.Current.Resources["ControlFillColorTertiaryBrush"],
-				IsReadOnly = true,
-				ClipboardCopyMode = DataGridClipboardCopyMode.IncludeHeader,
-			};
-			this.InitializeComponent();
-		}
+        public OrdersPage()
+        {
+            orders = new();
 
-		private void Page_Loaded(object sender, RoutedEventArgs e)
-		{
-			if (orders.Count == 0)
-			{
-				orders = Order.Orders();
-			}
+            isBusy = false;
+            dataGrid = new()
+            {
+                AutoGenerateColumns = true,
+                AlternatingRowBackground = (Brush)Application.Current.Resources["ControlFillColorTertiaryBrush"],
+                IsReadOnly = true,
+                ClipboardCopyMode = DataGridClipboardCopyMode.IncludeHeader,
+            };
+            this.InitializeComponent();
+        }
+
+        private async void Page_Loaded(object sender, RoutedEventArgs e)
+        {
+            // Mount the loading UI
+            ProgressRing progressRing = new ProgressRing
+            {
+                IsIndeterminate = true
+            };
+            TextBlock textBlock = new TextBlock
+            {
+                Text = "Fetching data",
+            };
+            StackPanel stackPanel = new StackPanel
+            {
+                HorizontalAlignment = HorizontalAlignment.Center,
+                VerticalAlignment = VerticalAlignment.Center,
+                Spacing = 10
+            };
+            stackPanel.Children.Add(progressRing);
+            stackPanel.Children.Add(textBlock);
+            scrollView.Content = stackPanel;
+
+            //This should load the page without waiting for the data
+            if (orders.Count == 0)
+            {
+                orders = await Order.Orders();
+            }
+
+            while (orders.Count == 0)
+            {
+                //Show loading state
+
+            }
 
             newOrdersCount = 0;
             foreach (var order in orders)
@@ -58,16 +84,16 @@ namespace proshandadmin
 
             dataGrid.ItemsSource = orders;
 
-			scrollView.Content = dataGrid;
-		}
+            scrollView.Content = dataGrid;
+        }
 
-		// Refresh Button
-		private async void Button_Click(object sender, RoutedEventArgs e)
-		{
+        // Refresh Button
+        private async void Button_Click(object sender, RoutedEventArgs e)
+        {
             myStoryboard.Begin();
 
             RefreshText.Text = "Loading";
-			RefreshButton.IsEnabled = false;
+            RefreshButton.IsEnabled = false;
             refreshIconTransform.Angle = 90;
 
             await Task.Delay(1000);
@@ -76,10 +102,10 @@ namespace proshandadmin
             RefreshButton.IsEnabled = true;
             RefreshText.Text = "Refresh";
 
-			dataGrid.ItemsSource = null;
-			orders = Order.Orders();
-			dataGrid.ItemsSource = orders;
-			newOrdersCount = 0;
+            dataGrid.ItemsSource = null;
+            orders = await Order.Orders();
+            dataGrid.ItemsSource = orders;
+            newOrdersCount = 0;
             foreach (var order in orders)
             {
                 if (!order.IsDone)
@@ -91,5 +117,5 @@ namespace proshandadmin
             NewOrdersCount.Text = null;
             NewOrdersCount.Text = newOrdersCount.ToString();
         }
-	}
+    }
 }

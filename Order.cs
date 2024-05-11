@@ -26,14 +26,15 @@ namespace proshandadmin
         //    return await Orders();
         //}
 
-        public static List<Order> Orders()
+        public static async Task<List<Order>> Orders()
         {
             FirestoreDb db = FirestoreDb.Create("prosthetichand-c0f57");
             CollectionReference usersRef = db.Collection("Orders");
-            Task<QuerySnapshot> snapshotTask = usersRef.GetSnapshotAsync();
-            QuerySnapshot snapshot = snapshotTask.Result;
+            //Task<QuerySnapshot> snapshotTask = usersRef.GetSnapshotAsync();
+            //QuerySnapshot snapshot = snapshotTask.Result;
             //Task continuation = snapshotTask.ContinueWith(x => snapshot = x);
             //continuation.Wait();
+            QuerySnapshot snapshot = await usersRef.GetSnapshotAsync();
             List<Order> data = new();
             foreach (DocumentSnapshot document in snapshot.Documents)
             {

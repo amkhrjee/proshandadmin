@@ -59,7 +59,7 @@
                             >
                             <Run
                                 x:Name="NewOrdersCount"></Run>
-                            <Run> New Orders Available</Run>
+                            <Run>New Orders Available</Run>
                         </Underline></TextBlock>
 					<Button Style="{ThemeResource AccentButtonStyle}">
 						<StackPanel Orientation="Horizontal" Spacing="8">
