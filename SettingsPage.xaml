@@ -15,111 +15,187 @@
             Text="Settings"
             Margin="16"
             Style="{StaticResource TitleTextBlockStyle}" />
-        <TextBlock
-            Text="Model Directories"
-            Margin="16"
-            Style="{StaticResource SubtitleTextBlockStyle}" />
-        <StackPanel
-            HorizontalAlignment="Left"
-            Orientation="Vertical"
-            Spacing="20"
-            Margin="16, 0, 0, 0">
+        <RelativePanel>
             <StackPanel
-                Spacing="10"
-                Orientation="Horizontal"
-                HorizontalAlignment="Center"
-                VerticalAlignment="Center">
+                x:Name="ModelDetails">
                 <TextBlock
-                    Text="30 cm"
-                    VerticalAlignment="Center"
-                    Style="{StaticResource BodyStrongTextBlockStyle}" />
-                <TextBox
-                    Width="400"
-                    AutomationProperties.Name="simple TextBox"
-                    PlaceholderText="Enter model directory" />
-                <Button
-                    ToolTipService.ToolTip="Browser folders"
-                    ToolTipService.Placement="Right">
-                    <FontIcon
-                        Glyph="&#xE838;" />
-                </Button>
-            </StackPanel>
-            <StackPanel
-                Spacing="10"
-                Orientation="Horizontal"
-                HorizontalAlignment="Center"
-                VerticalAlignment="Center">
+                    Text="Model Presets"
+                    Margin="16"
+                    Style="{StaticResource SubtitleTextBlockStyle}" />
                 <TextBlock
-                    Text="35 cm"
-                    VerticalAlignment="Center"
-                    Style="{StaticResource BodyStrongTextBlockStyle}" />
-                <TextBox
-                    Width="400"
-                    AutomationProperties.Name="simple TextBox"
-                    PlaceholderText="Enter model directory" />
-                <Button
-                    ToolTipService.ToolTip="Browser folders"
-                    ToolTipService.Placement="Right">
-                    <FontIcon
-                        Glyph="&#xE838;" />
-                </Button>
-            </StackPanel>
-            <StackPanel
-                Spacing="10"
-                Orientation="Horizontal"
-                HorizontalAlignment="Center"
-                VerticalAlignment="Center">
+                    Margin="16, 0, 0, 16"
+                    Style="{StaticResource BodyTextBlockStyle}">
+            Set the file locations of GLB model files of appropriate measurements</TextBlock>
+                <StackPanel
+                    HorizontalAlignment="Left"
+                    Orientation="Vertical"
+                    Spacing="20"
+                    Margin="16, 0, 0, 0">
+                    <StackPanel
+                        Spacing="10"
+                        Orientation="Horizontal"
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Center">
+                        <TextBlock
+                            Text="30 cm"
+                            VerticalAlignment="Center"
+                            Style="{StaticResource BodyStrongTextBlockStyle}" />
+                        <TextBox
+                            Width="400"
+                            AutomationProperties.Name="simple TextBox"
+                            PlaceholderText="Enter model file location" />
+                        <Button
+                            ToolTipService.ToolTip="Browser folders"
+                            ToolTipService.Placement="Right">
+                            <FontIcon
+                                Glyph="&#xE838;" />
+                        </Button>
+                    </StackPanel>
+                    <StackPanel
+                        Spacing="10"
+                        Orientation="Horizontal"
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Center">
+                        <TextBlock
+                            Text="35 cm"
+                            VerticalAlignment="Center"
+                            Style="{StaticResource BodyStrongTextBlockStyle}" />
+                        <TextBox
+                            Width="400"
+                            AutomationProperties.Name="simple TextBox"
+                            PlaceholderText="Enter model file location" />
+                        <Button
+                            ToolTipService.ToolTip="Browser folders"
+                            ToolTipService.Placement="Right">
+                            <FontIcon
+                                Glyph="&#xE838;" />
+                        </Button>
+                    </StackPanel>
+                    <StackPanel
+                        Spacing="10"
+                        Orientation="Horizontal"
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Center">
+                        <TextBlock
+                            Text="40 cm"
+                            VerticalAlignment="Center"
+                            Style="{StaticResource BodyStrongTextBlockStyle}" />
+                        <TextBox
+                            Width="400"
+                            AutomationProperties.Name="simple TextBox"
+                            PlaceholderText="Enter model file location" />
+                        <Button
+                            ToolTipService.ToolTip="Browser folders"
+                            ToolTipService.Placement="Right">
+                            <FontIcon
+                                Glyph="&#xE838;" />
+                        </Button>
+                    </StackPanel>
+                    <StackPanel
+                        Spacing="10"
+                        Orientation="Horizontal"
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Center">
+                        <TextBlock
+                            Text="45 cm"
+                            VerticalAlignment="Center"
+                            Style="{StaticResource BodyStrongTextBlockStyle}" />
+                        <TextBox
+                            Width="400"
+                            AutomationProperties.Name="simple TextBox"
+                            PlaceholderText="Enter model file location" />
+                        <Button
+                            ToolTipService.ToolTip="Browser folders"
+                            ToolTipService.Placement="Right">
+                            <FontIcon
+                                Glyph="&#xE838;" />
+                        </Button>
+                    </StackPanel>
+                </StackPanel>
                 <TextBlock
-                    Text="40 cm"
-                    VerticalAlignment="Center"
-                    Style="{StaticResource BodyStrongTextBlockStyle}" />
-                <TextBox
-                    Width="400"
-                    AutomationProperties.Name="simple TextBox"
-                    PlaceholderText="Enter model directory" />
-                <Button
-                    ToolTipService.ToolTip="Browser folders"
-                    ToolTipService.Placement="Right">
-                    <FontIcon
-                        Glyph="&#xE838;" />
-                </Button>
-            </StackPanel>
-            <StackPanel
-                Spacing="10"
-                Orientation="Horizontal"
-                HorizontalAlignment="Center"
-                VerticalAlignment="Center">
+                    Text="Order Models"
+                    Margin="16"
+                    Style="{StaticResource SubtitleTextBlockStyle}" />
                 <TextBlock
-                    Text="45 cm"
-                    VerticalAlignment="Center"
-                    Style="{StaticResource BodyStrongTextBlockStyle}" />
-                <TextBox
-                    Width="400"
-                    AutomationProperties.Name="simple TextBox"
-                    PlaceholderText="Enter model directory" />
-                <Button
-                    ToolTipService.ToolTip="Browser folders"
-                    ToolTipService.Placement="Right">
-                    <FontIcon
-                        Glyph="&#xE838;" />
-                </Button>
+                    Margin="16, 0, 0, 16"
+                    Style="{StaticResource BodyTextBlockStyle}">
+            Set the output location the printable models</TextBlock>
+                <StackPanel
+                    Orientation="Horizontal"
+                    Margin="16, 0, 0, 16"
+                    Spacing="10">
+                    <TextBox
+                        Width="450"
+                        AutomationProperties.Name="simple TextBox"
+                        PlaceholderText="Enter output folder" />
+                    <Button
+                        ToolTipService.ToolTip="Browser folders"
+                        ToolTipService.Placement="Right">
+                        <FontIcon
+                            Glyph="&#xE838;" />
+                    </Button>
+                </StackPanel>
             </StackPanel>
-        </StackPanel>
-        <HyperlinkButton
-            HorizontalAlignment="Left"
-            RelativePanel.AlignLeftWithPanel="True"
-            Margin="4, 260"
-            NavigateUri="https://github.com/amkhrjee/proshandadmin"
-            >
             <StackPanel
-                Orientation="Horizontal"
-                Spacing="8">
-                <FontIcon
-                Glyph="&#xE943;">
-                </FontIcon>
-            <TextBlock
-                x:Name="RefreshText">View Source</TextBlock>
+                Padding="16"
+                HorizontalAlignment="Right"
+                RelativePanel.AlignRightWithPanel="True"
+                RelativePanel.RightOf="ModelDetails">
+                <StackPanel
+                    Margin="0, 16, 0, 0"
+                    Padding="16"
+                    CornerRadius="8"
+                    Background="{ThemeResource CardBackgroundFillColorDefaultBrush}">
+                    <TextBlock
+                        HorizontalAlignment="Left"
+                        Padding="0, 8, 8, 8"
+                        Style="{ThemeResource BodyStrongTextBlockStyle}">Queries? Get in touch</TextBlock>
+                    <StackPanel
+                        Orientation="Horizontal">
+                        <FontIcon
+                            Glyph="&#xE774;" />
+                        <HyperlinkButton
+                            NavigateUri="https://amkhrjee.xyz">amkhrjee.xyz</HyperlinkButton>
+                    </StackPanel>
+                    <StackPanel
+                        Orientation="Horizontal">
+                        <FontIcon
+                            Glyph="&#xE715;" />
+                        <HyperlinkButton
+                            NavigateUri="mailto:amkhrjee@gmail.com">amkhrjee@gmail.com</HyperlinkButton>
+                    </StackPanel>
+                    <StackPanel
+                        Orientation="Horizontal">
+                        <FontIcon
+                            Glyph="&#xE943;" />
+                        <HyperlinkButton
+                            NavigateUri="mailto:amkhrjee@gmail.com">github.com/amkhrjee</HyperlinkButton>
+                    </StackPanel>
+                </StackPanel>
+                <StackPanel
+                    Margin="0, 16, 0, 0"
+                    Spacing="8"
+                    HorizontalAlignment="Left"
+                    Orientation="Horizontal">
+                    
+                    <TextBlock
+                        VerticalAlignment="Center">Theme</TextBlock>
+                    <DropDownButton
+                        Content="Choose a theme">
+                        <DropDownButton.Flyout>
+                            <MenuFlyout
+                                Placement="Bottom">
+                                <MenuFlyoutItem
+                                    Text="System default" />
+                                <MenuFlyoutItem
+                                    Text="Dark" />
+                                <MenuFlyoutItem
+                                    Text="Light" />
+                            </MenuFlyout>
+                        </DropDownButton.Flyout>
+                    </DropDownButton>
+                </StackPanel>
             </StackPanel>
-        </HyperlinkButton>
+        </RelativePanel>
     </StackPanel>
 </Page>
