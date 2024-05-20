@@ -43,7 +43,7 @@
                         <TextBox
                             Width="400"
                             AutomationProperties.Name="simple TextBox"
-                            PlaceholderText="Enter model file location" />
+                            PlaceholderText="Enter model folder path" />
                         <Button
                             ToolTipService.ToolTip="Browser folders"
                             ToolTipService.Placement="Right">
@@ -63,7 +63,7 @@
                         <TextBox
                             Width="400"
                             AutomationProperties.Name="simple TextBox"
-                            PlaceholderText="Enter model file location" />
+                            PlaceholderText="Enter model folder path" />
                         <Button
                             ToolTipService.ToolTip="Browser folders"
                             ToolTipService.Placement="Right">
@@ -83,7 +83,7 @@
                         <TextBox
                             Width="400"
                             AutomationProperties.Name="simple TextBox"
-                            PlaceholderText="Enter model file location" />
+                            PlaceholderText="Enter model folder path" />
                         <Button
                             ToolTipService.ToolTip="Browser folders"
                             ToolTipService.Placement="Right">
@@ -103,7 +103,7 @@
                         <TextBox
                             Width="400"
                             AutomationProperties.Name="simple TextBox"
-                            PlaceholderText="Enter model file location" />
+                            PlaceholderText="Enter model folder path" />
                         <Button
                             ToolTipService.ToolTip="Browser folders"
                             ToolTipService.Placement="Right">
@@ -133,6 +133,28 @@
                         ToolTipService.Placement="Right">
                         <FontIcon
                             Glyph="&#xE838;" />
+                    </Button>
+                </StackPanel>
+                <StackPanel
+                    Margin="16, 16, 0, 0"
+                    Spacing="10"
+                    Orientation="Horizontal">
+                    <Button
+                        Style="{StaticResource AccentButtonStyle}">
+                        <StackPanel
+                            Spacing="8"
+                            Orientation="Horizontal">
+                            <FontIcon
+                                Glyph="&#xE74E;" />
+                            <TextBlock>Save</TextBlock>
+                        </StackPanel>
+                    </Button>
+                    <Button>
+                        <StackPanel Spacing="8" Orientation="Horizontal">
+                            <FontIcon
+                                Glyph="&#xEA99;" />
+                            <TextBlock>Clear entries</TextBlock>
+                        </StackPanel>
                     </Button>
                 </StackPanel>
             </StackPanel>
@@ -177,7 +199,6 @@
                     Spacing="8"
                     HorizontalAlignment="Left"
                     Orientation="Horizontal">
-                    
                     <TextBlock
                         VerticalAlignment="Center">Theme</TextBlock>
                     <DropDownButton

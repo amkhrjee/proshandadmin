@@ -53,7 +53,7 @@ namespace proshandadmin
             StackPanel stackPanel = new StackPanel
             {
                 HorizontalAlignment = HorizontalAlignment.Center,
-                VerticalAlignment = VerticalAlignment.Center,
+                //VerticalAlignment = VerticalAlignment.Center,
                 Spacing = 10
             };
             stackPanel.Children.Add(progressRing);

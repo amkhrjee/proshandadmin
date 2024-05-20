@@ -1,16 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Page
-	x:Class="proshandadmin.OrdersPage"
-	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-	xmlns:local="using:proshandadmin"
-	xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-	xmlns:controls="using:CommunityToolkit.WinUI.UI.Controls"
-	xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-	mc:Ignorable="d"
-	Background="{ThemeResource LayerOnMicaBaseAltFillColorDefault}"
-	Loaded="Page_Loaded"
-	>
+    x:Class="proshandadmin.OrdersPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:proshandadmin"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:controls="using:CommunityToolkit.WinUI.UI.Controls"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource LayerOnMicaBaseAltFillColorDefault}"
+    Loaded="Page_Loaded">
     <Page.Resources>
         <Storyboard
             x:Name="myStoryboard">
@@ -22,21 +21,23 @@
                 Duration="0:0:1" />
         </Storyboard>
     </Page.Resources>
-    
     <Grid>
-		<StackPanel>
-			<TextBlock x:Name="pageTitle" Text="Manage Orders" Margin="16" Style="{StaticResource TitleTextBlockStyle}"/>
+        <StackPanel>
+            <TextBlock
+                x:Name="pageTitle"
+                Text="Manage Orders"
+                Margin="16"
+                Style="{StaticResource TitleTextBlockStyle}" />
             <RelativePanel
-                 Margin="16, 0, 0, 16" VerticalAlignment="Center" HorizontalAlignment="Left" Width="1050">
+                Margin="16, 0, 0, 16">
                 <Button
                     x:Name="RefreshButton"
                     HorizontalAlignment="Left"
-					RelativePanel.AlignLeftWithPanel="True"
                     Margin="0"
                     Click="Button_Click">
-					<StackPanel
-						Orientation="Horizontal"
-						Spacing="8">
+                    <StackPanel
+                        Orientation="Horizontal"
+                        Spacing="8">
                         <FontIcon
                             x:Name="RefreshIcon"
                             Glyph="&#xE72C;">
@@ -47,40 +48,48 @@
                                     x:Name="refreshIconTransform" />
                             </FontIcon.RenderTransform>
                         </FontIcon>
-                        <TextBlock x:Name="RefreshText">Refresh</TextBlock>
-					</StackPanel>
-				</Button>
-				<StackPanel Orientation="Horizontal" HorizontalAlignment="Right" RelativePanel.AlignRightWithPanel="True">
-					<TextBlock
-						VerticalAlignment="Center"
-						Padding="0, 0, 16, 0"
-                        >
-                        <Underline
-                            >
+                        <TextBlock
+                            x:Name="RefreshText">Refresh</TextBlock>
+                    </StackPanel>
+                </Button>
+                <StackPanel
+                    Margin="0, 0, 16, 0"
+                    Orientation="Horizontal"
+                    HorizontalAlignment="Right"
+                    RelativePanel.AlignRightWithPanel="True"
+                    RelativePanel.RightOf="RefreshButton">
+                    <TextBlock
+                        VerticalAlignment="Center"
+                        Padding="0, 0, 16, 0">
+                        <Underline>
                             <Run
                                 x:Name="NewOrdersCount"></Run>
                             <Run>New Orders Available</Run>	
                         </Underline></TextBlock>
-					<Button Style="{ThemeResource AccentButtonStyle}">
-						<StackPanel Orientation="Horizontal" Spacing="8">
-							<FontIcon Glyph="&#xE9F5;" />
-							<TextBlock>Process New Orders</TextBlock>
-						</StackPanel>
-					</Button>
-				</StackPanel>
-			</RelativePanel>
-					<ScrollView
-					x:Name="scrollView"
-					Height="450"
-					Width="1060"
-					HorizontalAlignment="Stretch"
-					VerticalAlignment="Top"
-					HorizontalScrollBarVisibility="Visible"
-					HorizontalScrollMode="Enabled"
-					VerticalScrollMode="Enabled"
-					VerticalScrollBarVisibility="Auto"
-					ZoomMode="Disabled"
-					IsTabStop="True"></ScrollView>
-		</StackPanel>
-	</Grid>
+                    <Button
+                        Style="{ThemeResource AccentButtonStyle}">
+                        <StackPanel
+                            Orientation="Horizontal"
+                            Spacing="8">
+                            <FontIcon
+                                Glyph="&#xE9F5;" />
+                            <TextBlock>Process New Orders</TextBlock>
+                        </StackPanel>
+                    </Button>
+                </StackPanel>
+            </RelativePanel>
+            <ScrollView
+                x:Name="scrollView"
+                Height="450"
+                Width="1060"
+                HorizontalAlignment="Stretch"
+                VerticalAlignment="Top"
+                HorizontalScrollBarVisibility="Visible"
+                HorizontalScrollMode="Enabled"
+                VerticalScrollMode="Enabled"
+                VerticalScrollBarVisibility="Auto"
+                ZoomMode="Disabled"
+                IsTabStop="True"></ScrollView>
+        </StackPanel>
+    </Grid>
 </Page>
