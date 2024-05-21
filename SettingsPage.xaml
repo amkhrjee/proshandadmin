@@ -26,7 +26,7 @@
                 <TextBlock
                     Margin="16, 0, 0, 16"
                     Style="{StaticResource BodyTextBlockStyle}">
-            Set the folder locations of GLB model files of appropriate measurements</TextBlock>
+            Set the folder locations of GLTF model files of appropriate measurements</TextBlock>
                 <StackPanel
                     HorizontalAlignment="Left"
                     Orientation="Vertical"
@@ -47,6 +47,7 @@
                             AutomationProperties.Name="simple TextBox"
                             PlaceholderText="Enter model folder path" />
                         <Button
+                            Click="Button_Click_1"
                             ToolTipService.ToolTip="Browse folders"
                             ToolTipService.Placement="Right">
                             <FontIcon
@@ -68,6 +69,7 @@
                             AutomationProperties.Name="simple TextBox"
                             PlaceholderText="Enter model folder path" />
                         <Button
+                            Click="Button_Click_2"
                             ToolTipService.ToolTip="Browse folders"
                             ToolTipService.Placement="Right">
                             <FontIcon
@@ -89,6 +91,7 @@
                             AutomationProperties.Name="simple TextBox"
                             PlaceholderText="Enter model folder path" />
                         <Button
+                            Click="Button_Click_3"
                             ToolTipService.ToolTip="Browse folders"
                             ToolTipService.Placement="Right">
                             <FontIcon
@@ -110,6 +113,7 @@
                             AutomationProperties.Name="simple TextBox"
                             PlaceholderText="Enter model folder path" />
                         <Button
+                            Click="Button_Click_4"
                             ToolTipService.ToolTip="Browse folders"
                             ToolTipService.Placement="Right">
                             <FontIcon
@@ -135,6 +139,7 @@
                         AutomationProperties.Name="simple TextBox"
                         PlaceholderText="Enter output folder" />
                     <Button
+                        Click="Button_Click_5"
                         ToolTipService.ToolTip="Browse folders"
                         ToolTipService.Placement="Right">
                         <FontIcon
@@ -152,12 +157,17 @@
                             Spacing="8"
                             Orientation="Horizontal">
                             <FontIcon
+                                x:Name="SaveButtonIcon"
                                 Glyph="&#xE74E;" />
-                            <TextBlock>Save</TextBlock>
+                            <TextBlock
+                                x:Name="SaveButtonText">Save</TextBlock>
                         </StackPanel>
                     </Button>
-                    <Button>
-                        <StackPanel Spacing="8" Orientation="Horizontal">
+                    <Button
+                        Click="Button_Click_6">
+                        <StackPanel
+                            Spacing="8"
+                            Orientation="Horizontal">
                             <FontIcon
                                 Glyph="&#xEA99;" />
                             <TextBlock>Clear entries</TextBlock>
@@ -211,7 +221,11 @@
                         Style="{StaticResource BodyStrongTextBlockStyle}">About</TextBlock>
                     <TextBlock>v0.0.1 Prosthetics Store Admin</TextBlock>
                     <TextBlock>© Aniruddha Mukherjee 2024</TextBlock>
-                </StackPanel>   
+                    <TextBlock
+                        xmlns:ui="using:CommunityToolkit.WinUI.UI">
+                        <Hyperlink
+                            NavigateUri="https://github.com/amkhrjee/proshandadmin">View source</Hyperlink></TextBlock>
+                </StackPanel>
             </StackPanel>
         </RelativePanel>
     </StackPanel>

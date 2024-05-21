@@ -13,9 +13,11 @@ using System.IO;
 using System.IO.IsolatedStorage;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
+using System.Threading.Tasks;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
 using Windows.Storage;
+using Windows.Storage.Pickers;
 using Windows.Storage.Search;
 
 namespace proshandadmin
@@ -42,12 +44,20 @@ namespace proshandadmin
                     Debug.WriteLine(item.Name);
                     if (item.Name == "settings.json")
                     {
+                        Debug.WriteLine("Writing to file");
                         // Store the settings to the JSON
-                        await FileIO.WriteTextAsync(item, $"{{Thirty: '{ThirtyDir.Text}', ThirtyFive: '{ThirtyFiveDir.Text}', Forty: '{FortyDir.Text}', FortyFive: '{FortyFiveDir.Text}', OutputDir: '{OutputDir.Text}'}}");
+                        await FileIO.WriteTextAsync(item, $"{{Thirty: '{ThirtyDir.Text.Replace('\\', '>')}', ThirtyFive: '{ThirtyFiveDir.Text.Replace('\\', '>')}', Forty: '{FortyDir.Text.Replace('\\', '>')}', FortyFive: '{FortyFiveDir.Text.Replace('\\', '>')}', OutputDir: '{OutputDir.Text.Replace('\\', '>')}'}}");
                     }
                 }
 
             }
+
+            SaveButtonIcon.Glyph = "\uE73E";
+            SaveButtonText.Text = "Saved";
+            await Task.Delay(500);
+            SaveButtonIcon.Glyph = "\uE74E";
+            SaveButtonText.Text = "Save";
+
         }
 
         private async void Page_Loaded(object sender, RoutedEventArgs e)
@@ -68,11 +78,11 @@ namespace proshandadmin
                         Debug.WriteLine("Found the settings file!");
                         string json = File.ReadAllText(item.Path);
                         settings = JsonConvert.DeserializeObject<Dictionary<string, string>>(json);
-                        var thirtyPath = settings["Thirty"];
-                        var thirtyFivePath = settings["ThirtyFive"];
-                        var fortyPath = settings["Forty"];
-                        var fortyFivePath = settings["FortyFive"];
-                        var outputDirPath = settings["OutputDir"];
+                        var thirtyPath = settings["Thirty"].Replace('>', '\\');
+                        var thirtyFivePath = settings["ThirtyFive"].Replace('>', '\\');
+                        var fortyPath = settings["Forty"].Replace('>', '\\');
+                        var fortyFivePath = settings["FortyFive"].Replace('>', '\\');
+                        var outputDirPath = settings["OutputDir"].Replace('>', '\\');
 
                         if (thirtyPath.Length > 0)
                         {
@@ -98,7 +108,6 @@ namespace proshandadmin
                         {
                             OutputDir.Text = outputDirPath;
                         }
-
                     }
                 }
             }
@@ -109,6 +118,67 @@ namespace proshandadmin
                 await FileIO.WriteTextAsync(settingsFile, "{Thirty: '', ThirtyFive: '', Forty: '', FortyFive: '', OutputDir: ''}");
             }
 
+        }
+
+        private static async void SetFilePath(TextBox textBox)
+        {
+            var openPicker = new FileOpenPicker();
+            var window = App.m_window;
+            var hWnd = WinRT.Interop.WindowNative.GetWindowHandle(window);
+            WinRT.Interop.InitializeWithWindow.Initialize(openPicker, hWnd);
+            openPicker.ViewMode = PickerViewMode.Thumbnail;
+            openPicker.FileTypeFilter.Add(".gltf");
+            var file = await openPicker.PickSingleFileAsync();
+            if (file != null)
+            {
+                textBox.Text = file.Path;
+            }
+        }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            SetFilePath(ThirtyDir);
+        }
+
+        private void Button_Click_2(object sender, RoutedEventArgs e)
+        {
+            SetFilePath(ThirtyFiveDir);
+        }
+
+        private void Button_Click_3(object sender, RoutedEventArgs e)
+        {
+            SetFilePath(FortyDir);
+        }
+
+        private void Button_Click_4(object sender, RoutedEventArgs e)
+        {
+            SetFilePath(FortyFiveDir);
+        }
+
+        private async void Button_Click_5(object sender, RoutedEventArgs e)
+        {
+            var openPicker = new FolderPicker();
+            var window = App.m_window;
+            var hWnd = WinRT.Interop.WindowNative.GetWindowHandle(window);
+            WinRT.Interop.InitializeWithWindow.Initialize(openPicker, hWnd);
+            openPicker.ViewMode = PickerViewMode.Thumbnail;
+            openPicker.SuggestedStartLocation = PickerLocationId.Desktop;
+            openPicker.FileTypeFilter.Add("*");
+
+            var folder = await openPicker.PickSingleFolderAsync();
+            if (folder != null)
+            {
+                OutputDir.Text = folder.Path;
+            }
+
+        }
+
+        private void Button_Click_6(object sender, RoutedEventArgs e)
+        {
+            foreach(var textBox in new List<TextBox>{ThirtyDir, ThirtyFiveDir, FortyDir, FortyFiveDir, OutputDir})
+            {
+                textBox.Text = "";
+            }
         }
     }
 }

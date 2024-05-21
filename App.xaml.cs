@@ -32,6 +32,6 @@ namespace proshandadmin
 
         }
 
-        private Window m_window;
+        public static Window m_window = new();
     }
 }
