@@ -20,7 +20,7 @@ namespace proshandadmin
     {
         public MainWindow()
         {
-            this.Title = "Prosthetic Hand Store Admin";
+            this.Title = "Prosthetics Store Admin";
             this.ExtendsContentIntoTitleBar = true;
 
             this.InitializeComponent();

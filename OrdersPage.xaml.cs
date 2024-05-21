@@ -10,9 +10,12 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using Microsoft.UI.Text;
 using CommunityToolkit.WinUI.UI.Controls;
+using CommunityToolkit.Mvvm.Input;
 using System.Management;
 using System.Threading;
 using Microsoft.UI.Xaml.Media.Animation;
+using Windows.System;
+using System.Windows.Input;
 
 
 namespace proshandadmin
@@ -53,7 +56,7 @@ namespace proshandadmin
             StackPanel stackPanel = new StackPanel
             {
                 HorizontalAlignment = HorizontalAlignment.Center,
-                //VerticalAlignment = VerticalAlignment.Center,
+                VerticalAlignment = VerticalAlignment.Center,
                 Spacing = 10
             };
             stackPanel.Children.Add(progressRing);
@@ -63,7 +66,27 @@ namespace proshandadmin
             //This should load the page without waiting for the data
             if (orders.Count == 0)
             {
-                orders = await Order.Orders();
+                try
+                {
+                    orders = await Order.Orders();
+                }
+                catch (Exception ex)
+                {
+                    ContentDialog dialog = new()
+                    {
+                        XamlRoot = this.XamlRoot,
+                        Style = Application.Current.Resources["DefaultContentDialogStyle"] as Style,
+                        Title = "Couldn't connect to internet",
+                        PrimaryButtonText = "Network Settings",
+                        CloseButtonText = "Close App",
+                        DefaultButton = ContentDialogButton.Primary,
+                        Content = $"Could not reach database servers. An active internet connection is required to view orders.\n\nError Description: {ex.Message}",
+                        PrimaryButtonCommand = new RelayCommand(OpenNetworkSettings),
+                        CloseButtonCommand = new RelayCommand(() => Application.Current.Exit()),
+                    };
+                    dialog.Closing += (s, e) => Application.Current.Exit();
+                    await dialog.ShowAsync();
+                }
             }
 
             while (orders.Count == 0)
@@ -85,6 +108,18 @@ namespace proshandadmin
             dataGrid.ItemsSource = orders;
 
             scrollView.Content = dataGrid;
+        }
+
+        private static async Task CloseApp(ContentDialog sender, ContentDialogClosingEventArgs args)
+        {
+            Application.Current.Exit();
+
+            await Task.CompletedTask;
+        }
+
+        private static async void OpenNetworkSettings()
+        {
+            await Launcher.LaunchUriAsync(new Uri("ms-settings:network"));
         }
 
         // Refresh Button
