@@ -7,7 +7,7 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d"
-    Background="{ThemeResource LayerOnMicaBaseAltFillColorDefault}">
+    Background="{ThemeResource LayerOnAcrylicFillColorDefault}">
     <StackPanel>
         <TextBlock
             x:Name="pageTitle"
@@ -99,11 +99,10 @@
                     HorizontalAlignment="Center"
                     Style="{ThemeResource SubtitleTextBlockStyle}">Visit store website</TextBlock>
                 <HyperlinkButton
-                    NavigateUri="https://proshandstore.vercel.app"
-                    HorizontalAlignment="Center">
-                    <FontIcon
-                        Glyph="&#xF71C;"
-                        FontSize="60" />
+                    FontFamily="Consolas"
+                    NavigateUri="https://prosthetics.amkhrjee.xyz"
+                    HorizontalAlignment="Left">
+                    prosthetics.amkhrjee.xyz
                 </HyperlinkButton>
             </StackPanel>
             <StackPanel
@@ -111,79 +110,16 @@
                 Padding="24"
                 Spacing="16"
                 CornerRadius="8"
+                Width="685"
                 Background="{ThemeResource CardBackgroundFillColorDefaultBrush}">
                 <TextBlock
-                    Style="{ThemeResource TitleTextBlockStyle}">Project Participants</TextBlock>
-                <StackPanel
-                    Orientation="Horizontal"
-                    Spacing="52">
-                    <StackPanel
-                        Orientation="Vertical"
-                        Spacing="8"
-                        HorizontalAlignment="Stretch">
-                        <HyperlinkButton
-                            HorizontalAlignment="Center"
-                            NavigateUri="http://agnigarh.tezu.ernet.in/~nkakoty">
-                            <PersonPicture
-                                ProfilePicture="https://i.ibb.co/94YXBMG/index1.jpg" />
-                        </HyperlinkButton>
-                        <TextBlock
-                            HorizontalAlignment="Center"
-                            Style="{ThemeResource BodyStrongTextBlockStyle}">Dr. Nayan M. Kakoty</TextBlock>
-                        <TextBlock
-                            HorizontalAlignment="Center"
-                            Style="{ThemeResource CaptionTextBlockStyle}">Project Guide</TextBlock>
-                    </StackPanel>
-                    <StackPanel
-                        Orientation="Vertical"
-                        Spacing="8"
-                        HorizontalAlignment="Stretch">
-                        <HyperlinkButton
-                            HorizontalAlignment="Center"
-                            NavigateUri="https://www.linkedin.com/in/kumar-yogesh-2389872ba/">
-                            <PersonPicture
-                                ProfilePicture="https://i.ibb.co/KN48pXh/1713849714221.jpg" />
-                        </HyperlinkButton>
-                        <TextBlock
-                            HorizontalAlignment="Center"
-                            Style="{ThemeResource BodyStrongTextBlockStyle}">Kumar Yogesh</TextBlock>
-                        <TextBlock
-                            HorizontalAlignment="Center"
-                            Style="{ThemeResource CaptionTextBlockStyle}">Electronics &amp; Software</TextBlock>
-                    </StackPanel>
-                    <StackPanel
-                        Orientation="Vertical"
-                        Spacing="8">
-                        <HyperlinkButton
-                            HorizontalAlignment="Center"
-                            NavigateUri="https://www.linkedin.com/in/amkhrjee/">
-                            <PersonPicture
-                                ProfilePicture="https://i.ibb.co/0YDSQw5/potrait.jpg" />
-                        </HyperlinkButton>
-                        <TextBlock
-                            HorizontalAlignment="Center"
-                            Style="{ThemeResource BodyStrongTextBlockStyle}">Aniruddha Mukherjee</TextBlock>
-                        <TextBlock
-                            HorizontalAlignment="Center"
-                            Style="{ThemeResource CaptionTextBlockStyle}">Web &amp; Software</TextBlock>
-                    </StackPanel>
-                    <StackPanel
-                        Orientation="Vertical"
-                        Spacing="8">
-                        <HyperlinkButton
-                            HorizontalAlignment="Center"
-                            NavigateUri="https://www.linkedin.com/in/ritish-kumar-das-17a629245/">
-                            <PersonPicture
-                                ProfilePicture="https://i.ibb.co/q91LsBQ/1657976189663.jpg" />
-                        </HyperlinkButton>
-                        <TextBlock
-                            HorizontalAlignment="Center"
-                            Style="{ThemeResource BodyStrongTextBlockStyle}">Ritish Kumar Das</TextBlock>
-                        <TextBlock
-                            HorizontalAlignment="Center"
-                            Style="{ThemeResource CaptionTextBlockStyle}">Electronics &amp; ML</TextBlock>
-                    </StackPanel>
-                </StackPanel>
+                    Style="{ThemeResource TitleTextBlockStyle}">About the project</TextBlock>
+                <TextBlock
+                    xmlns:ui="using:CommunityToolkit.WinUI.UI"
+                    TextWrapping="Wrap">This project has been made as an inter-departmental project between the Computer Science &amp; the Electronics Engineering department at TU, in the Fall semester of 2024. <Hyperlink
+                        NavigateUri="https://www.linkedin.com/in/kumar-yogesh-2389872ba/">Kumar Yogesh</Hyperlink> and <Hyperlink
+                        NavigateUri="https://www.linkedin.com/in/ritish-kumar-das-17a629245/">Ritish K. Das</Hyperlink> from the Electronics department developed the electronics for this project, while <Hyperlink
+                        NavigateUri="https://linkedin.com/in/amkrhjee">Aniruddha Mukherjee</Hyperlink> (me) developed the software.</TextBlock>
             </StackPanel>
         </StackPanel>
     </StackPanel>

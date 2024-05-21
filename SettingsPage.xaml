@@ -9,7 +9,7 @@
     mc:Ignorable="d"
     Name="SetingsPage"
     Loaded="Page_Loaded"
-    Background="{ThemeResource LayerOnMicaBaseAltFillColorDefault}">
+    Background="{ThemeResource LayerOnAcrylicFillColorDefault}">
     <StackPanel>
         <TextBlock
             x:Name="pageTitle"
