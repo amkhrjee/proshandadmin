@@ -223,6 +223,7 @@ namespace proshandadmin
                     Style = Application.Current.Resources["DefaultContentDialogStyle"] as Style,
                     Title = "Models Generated",
                     PrimaryButtonText = "View Models",
+                    DefaultButton = ContentDialogButton.Primary,
                     CloseButtonText = "OK",
                     Content = "Press the Refresh button to view updated data",
                     PrimaryButtonCommand = new RelayCommand(async() => await Launcher.LaunchFolderAsync(outputFolder))
