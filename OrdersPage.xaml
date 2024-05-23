@@ -67,13 +67,15 @@
                             <Run>New Orders Available</Run>	
                         </Underline></TextBlock>
                     <Button
+                        x:Name="ProcessButton"
+                        Click="Button_Click_1"
                         Style="{ThemeResource AccentButtonStyle}">
                         <StackPanel
                             Orientation="Horizontal"
                             Spacing="8">
                             <FontIcon
                                 Glyph="&#xE9F5;" />
-                            <TextBlock>Process New Orders</TextBlock>
+                            <TextBlock x:Name="ProcessButtonText">Process New Orders</TextBlock>
                         </StackPanel>
                     </Button>
                 </StackPanel>
